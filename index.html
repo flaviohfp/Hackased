@@ -11,219 +11,134 @@
 <body>
   <div class="container-fluid">
     <div class="row vh-100">
-      <!-- Sidebar Plataformas -->
       <div class="col-auto sidebar-platforms px-0 bg-dark">
         <div class="text-center py-3 border-bottom border-secondary">
-          <h5 class="text-white mb-0">
-            <i class="bi bi-chat-dots-fill"></i>
-          </h5>
+          <h5 class="text-white mb-0"><i class="bi bi-chat-dots-fill"></i></h5>
         </div>
 
         <nav class="nav flex-column text-center py-3">
-            <a
-              href="#"
-              class="nav-link text-white platform-link active"
-              data-platform="whatsapp"
-            >
-              <i class="bi bi-whatsapp fs-4"></i>
-              <small class="d-block mt-1">WhatsApp</small>
-              <span
-                class="badge bg-success rounded-pill position-absolute top-0 end-0 me-2 mt-2"
-                >5</span
-              >
-            </a>
-
-            <a
-              href="#"
-              class="nav-link text-white platform-link"
-              data-platform="instagram"
-            >
-              <i class="bi bi-instagram fs-4"></i>
-              <small class="d-block mt-1">Instagram</small>
-              <span
-                class="badge bg-danger rounded-pill position-absolute top-0 end-0 me-2 mt-2"
-                >3</span
-              >
-            </a>
-
-            <a
-              href="#"
-              class="nav-link text-white platform-link"
-              data-platform="facebook"
-            >
-              <i class="bi bi-facebook fs-4"></i>
-              <small class="d-block mt-1">Facebook</small>
-              <span
-                class="badge bg-primary rounded-pill position-absolute top-0 end-0 me-2 mt-2"
-                >2</span
-              >
-            </a>
-
-            <a
-              href="#"
-              class="nav-link text-white platform-link"
-              data-platform="telegram"
-            >
-              <i class="bi bi-telegram fs-4"></i>
-              <small class="d-block mt-1">Telegram</small>
-              <span
-                class="badge bg-info rounded-pill position-absolute top-0 end-0 me-2 mt-2"
-                >1</span
-              >
-            </a>
-            
-            <a
-              href="historico.html"
-              class="nav-link text-white"
-              data-platform="history"
-              title="Histórico de Mensagens"
-            >
-              <i class="bi bi-clock-history fs-4"></i>
-              <small class="d-block mt-1">Histórico</small>
-            </a>
-          </nav>
+          <a href="#" class="nav-link text-white platform-link active" data-platform="whatsapp">
+            <i class="bi bi-whatsapp fs-4"></i>
+            <small class="d-block mt-1">WhatsApp</small>
+            <span class="badge bg-success rounded-pill position-absolute top-0 end-0 me-2 mt-2">5</span>
+          </a>
+          <a href="#" class="nav-link text-white platform-link" data-platform="instagram">
+            <i class="bi bi-instagram fs-4"></i>
+            <small class="d-block mt-1">Instagram</small>
+            <span class="badge bg-danger rounded-pill position-absolute top-0 end-0 me-2 mt-2">3</span>
+          </a>
+          <a href="#" class="nav-link text-white platform-link" data-platform="facebook">
+            <i class="bi bi-facebook fs-4"></i>
+            <small class="d-block mt-1">Facebook</small>
+            <span class="badge bg-primary rounded-pill position-absolute top-0 end-0 me-2 mt-2">2</span>
+          </a>
+          <a href="#" class="nav-link text-white platform-link" data-platform="telegram">
+            <i class="bi bi-telegram fs-4"></i>
+            <small class="d-block mt-1">Telegram</small>
+            <span class="badge bg-info rounded-pill position-absolute top-0 end-0 me-2 mt-2">1</span>
+          </a>
+          <a href="historico.html" class="nav-link text-white" title="Histórico de mensagens">
+            <i class="bi bi-clock-history fs-4"></i>
+            <small class="d-block mt-1">Histórico</small>
+          </a>
+        </nav>
 
         <div class="position-absolute bottom-0 w-100 border-top border-secondary">
           <div class="dropdown dropup text-center py-3">
-            <a href="#" class="d-flex flex-column align-items-center text-white text-decoration-none" data-bs-toggle="dropdown">
-              <img src="https://github.com/mdo.png" width="32" height="32" class="rounded-circle mb-1">
+            <a href="#" class="d-flex flex-column align-items-center text-white text-decoration-none" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://github.com/mdo.png" alt="Usuário administrador" width="32" height="32" class="rounded-circle mb-1">
               <small>Admin</small>
             </a>
             <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-              <li>
-                <a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i>Configurações</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#"><i class="bi bi-person me-2"></i>Perfil</a>
-              </li>
+              <li><a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i>Configurações</a></li>
+              <li><a class="dropdown-item" href="#"><i class="bi bi-person me-2"></i>Perfil</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li>
-                <a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right me-2"></i>Sair</a>
-              </li>
+              <li><a class="dropdown-item" href="#" id="logoutButton"><i class="bi bi-box-arrow-right me-2"></i>Sair</a></li>
             </ul>
           </div>
         </div>
       </div>
 
-      <!-- Lista de Conversas -->
       <div class="col-md-3 col-lg-3 px-0 bg-light border-end conversations-sidebar">
         <div class="p-3 border-bottom bg-white">
           <h5 class="mb-3">Mensagens</h5>
-          <input type="search" class="form-control" placeholder="Buscar conversas...">
+          <input type="search" class="form-control" placeholder="Buscar conversas..." aria-label="Buscar conversas">
         </div>
 
         <div class="conversations-list">
-          <!-- WhatsApp -->
           <div class="conversation-group" data-platform="whatsapp">
-              <div class="conversation-item active" data-chat-id="1">
-                <img
-                  src="https://ui-avatars.com/api/?name=João+Silva&background=25D366&color=fff"
-                  class="rounded-circle"
-                  width="50"
-                  height="50"
-                />
-                <div class="flex-grow-1 ms-3">
-                  <div
-                    class="d-flex justify-content-between align-items-center mb-1"
-                  >
-                    <h6 class="mb-0 fw-bold">João Silva</h6>
-                    <small class="text-muted">10:30</small>
-                  </div>
-                  <p class="mb-0 text-truncate text-muted small">
-                    <i class="bi bi-whatsapp text-success me-1"></i>
-                    Olá, gostaria de saber sobre...
-                  </p>
+            <div class="conversation-item active" data-chat-id="1">
+              <img src="https://ui-avatars.com/api/?name=Joao+Silva&background=25D366&color=fff" alt="João Silva" class="rounded-circle" width="50" height="50">
+              <div class="flex-grow-1 ms-3 overflow-hidden">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <h6 class="mb-0 fw-bold">João Silva</h6>
+                  <small class="text-muted">10:30</small>
                 </div>
-                <span class="badge bg-success rounded-pill ms-2">2</span>
+                <p class="mb-0 text-truncate text-muted small"><i class="bi bi-whatsapp text-success me-1"></i>Olá, gostaria de saber sobre...</p>
               </div>
-
-              <div class="conversation-item" data-chat-id="5">
-                <img
-                  src="https://ui-avatars.com/api/?name=Carlos+Mendes&background=25D366&color=fff"
-                  class="rounded-circle"
-                  width="50"
-                  height="50"
-                />
-                <div class="flex-grow-1 ms-3">
-                  <div
-                    class="d-flex justify-content-between align-items-center mb-1"
-                  >
-                    <h6 class="mb-0 fw-bold">Carlos Mendes</h6>
-                    <small class="text-muted">Seg</small>
-                  </div>
-                  <p class="mb-0 text-truncate text-muted small">
-                    <i class="bi bi-whatsapp text-success me-1"></i>
-                    Tem disponível em outras cores?
-                  </p>
-                </div>
-                <span class="badge bg-success rounded-pill ms-2">1</span>
-              </div>
+              <span class="badge bg-success rounded-pill ms-2">2</span>
             </div>
+            <div class="conversation-item" data-chat-id="5">
+              <img src="https://ui-avatars.com/api/?name=Carlos+Mendes&background=25D366&color=fff" alt="Carlos Mendes" class="rounded-circle" width="50" height="50">
+              <div class="flex-grow-1 ms-3 overflow-hidden">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <h6 class="mb-0 fw-bold">Carlos Mendes</h6>
+                  <small class="text-muted">Seg</small>
+                </div>
+                <p class="mb-0 text-truncate text-muted small"><i class="bi bi-whatsapp text-success me-1"></i>Tem disponível em outras cores?</p>
+              </div>
+              <span class="badge bg-success rounded-pill ms-2">1</span>
+            </div>
+          </div>
 
-          <!-- Instagram -->
           <div class="conversation-group d-none" data-platform="instagram">
             <div class="conversation-item" data-chat-id="6">
-              <img src="https://ui-avatars.com/api/?name=Julia+Costa&background=E4405F&color=fff" class="rounded-circle" width="50" height="50">
-              <div class="flex-grow-1 ms-3">
+              <img src="https://ui-avatars.com/api/?name=Julia+Costa&background=E4405F&color=fff" alt="Julia Costa" class="rounded-circle" width="50" height="50">
+              <div class="flex-grow-1 ms-3 overflow-hidden">
                 <div class="d-flex justify-content-between align-items-center mb-1">
                   <h6 class="mb-0 fw-bold">@julia_costa</h6>
                   <small class="text-muted">11:20</small>
                 </div>
-                <p class="mb-0 text-truncate text-muted small">
-                  <i class="bi bi-instagram text-danger me-1"></i>
-                  Adorei o produto! 😍
-                </p>
+                <p class="mb-0 text-truncate text-muted small"><i class="bi bi-instagram text-danger me-1"></i>Adorei o produto!</p>
               </div>
               <span class="badge bg-danger rounded-pill ms-2">1</span>
             </div>
-
             <div class="conversation-item" data-chat-id="7">
-              <img src="https://ui-avatars.com/api/?name=Rafael+Alves&background=E4405F&color=fff" class="rounded-circle" width="50" height="50">
-              <div class="flex-grow-1 ms-3">
+              <img src="https://ui-avatars.com/api/?name=Rafael+Alves&background=E4405F&color=fff" alt="Rafael Alves" class="rounded-circle" width="50" height="50">
+              <div class="flex-grow-1 ms-3 overflow-hidden">
                 <div class="d-flex justify-content-between align-items-center mb-1">
                   <h6 class="mb-0 fw-bold">@rafael.alves</h6>
                   <small class="text-muted">10:45</small>
                 </div>
-                <p class="mb-0 text-truncvhcate text-muted small">
-                  <i class="bi bi-instagram text-danger me-1"></i>
-                  Vi seu post, como faço pedido?
-                </p>
+                <p class="mb-0 text-truncate text-muted small"><i class="bi bi-instagram text-danger me-1"></i>Vi seu post, como faço pedido?</p>
               </div>
               <span class="badge bg-danger rounded-pill ms-2">2</span>
             </div>
           </div>
 
-          <!-- Facebook -->
           <div class="conversation-group d-none" data-platform="facebook">
             <div class="conversation-item" data-chat-id="8">
-              <img src="https://ui-avatars.com/api/?name=Lucia+Ferreira&background=1877F2&color=fff" class="rounded-circle" width="50" height="50">
-              <div class="flex-grow-1 ms-3">
+              <img src="https://ui-avatars.com/api/?name=Lucia+Ferreira&background=1877F2&color=fff" alt="Lucia Ferreira" class="rounded-circle" width="50" height="50">
+              <div class="flex-grow-1 ms-3 overflow-hidden">
                 <div class="d-flex justify-content-between align-items-center mb-1">
                   <h6 class="mb-0 fw-bold">Lucia Ferreira</h6>
                   <small class="text-muted">12:00</small>
                 </div>
-                <p class="mb-0 text-truncate text-muted small">
-                  <i class="bi bi-facebook text-primary me-1"></i>
-                  Preciso de mais informações
-                </p>
+                <p class="mb-0 text-truncate text-muted small"><i class="bi bi-facebook text-primary me-1"></i>Preciso de mais informações</p>
               </div>
               <span class="badge bg-primary rounded-pill ms-2">1</span>
             </div>
           </div>
 
-          <!-- Telegram -->
           <div class="conversation-group d-none" data-platform="telegram">
             <div class="conversation-item" data-chat-id="9">
-              <img src="https://ui-avatars.com/api/?name=Bruno+Souza&background=0088cc&color=fff" class="rounded-circle" width="50" height="50">
-              <div class="flex-grow-1 ms-3">
+              <img src="https://ui-avatars.com/api/?name=Bruno+Souza&background=0088cc&color=fff" alt="Bruno Souza" class="rounded-circle" width="50" height="50">
+              <div class="flex-grow-1 ms-3 overflow-hidden">
                 <div class="d-flex justify-content-between align-items-center mb-1">
                   <h6 class="mb-0 fw-bold">Bruno Souza</h6>
                   <small class="text-muted">13:15</small>
                 </div>
-                <p class="mb-0 text-truncate text-muted small">
-                  <i class="bi bi-telegram text-info me-1"></i>
-                  Olá, tudo bem?
-                </p>
+                <p class="mb-0 text-truncate text-muted small"><i class="bi bi-telegram text-info me-1"></i>Olá, tudo bem?</p>
               </div>
               <span class="badge bg-info rounded-pill ms-2">1</span>
             </div>
@@ -231,113 +146,15 @@
         </div>
       </div>
 
-      <!-- Área de Chat -->
       <div class="col chat-area d-flex flex-column">
-        <div class="chat-header border-bottom p-3 bg-white">
-          <div class="d-flex align-items-center justify-content-between">
-            <div class="d-flex align-items-center">
-              <img src="https://ui-avatars.com/api/?name=João+Silva&background=25D366&color=fff" class="rounded-circle me-3" width="50" height="50">
-              <div>
-                <h5 class="mb-0">João Silva</h5>
-                <small class="text-muted">
-                  <i class="bi bi-whatsapp text-success"></i> WhatsApp •
-                  <span class="text-success">Online</span>
-                </small>
-              </div>
-            </div>
-            <div>
-              <button class="btn btn-sm btn-outline-secondary me-2" title="Chamada de voz">
-                <i class="bi bi-telephone"></i>
-              </button>
-              <button class="btn btn-sm btn-outline-secondary me-2" title="Chamada de vídeo">
-                <i class="bi bi-camera-video"></i>
-              </button>
-              <button class="btn btn-sm btn-outline-secondary" title="Mais opções">
-                <i class="bi bi-three-dots-vertical"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="chat-messages flex-grow-1 p-4">
-          <div class="message-date text-center mb-3">
-            <span class="badge bg-light text-dark">Hoje</span>
-          </div>
-
-          <div class="message received">
-            <img src="https://ui-avatars.com/api/?name=João+Silva&background=25D366&color=fff" class="rounded-circle me-2" width="35" height="35">
-            <div class="message-bubble">
-              <p class="mb-1">Olá! Boa tarde!</p>
-              <small class="text-muted">10:25</small>
-            </div>
-          </div>
-
-          <div class="message received">
-            <img src="https://ui-avatars.com/api/?name=João+Silva&background=25D366&color=fff" class="rounded-circle me-2" width="35" height="35">
-            <div class="message-bubble">
-              <p class="mb-1">Gostaria de saber mais sobre os produtos disponíveis.</p>
-              <small class="text-muted">10:26</small>
-            </div>
-          </div>
-
-          <div class="message received">
-            <img src="https://ui-avatars.com/api/?name=João+Silva&background=25D366&color=fff" class="rounded-circle me-2" width="35" height="35">
-            <div class="message-bubble">
-              <p class="mb-1">Vocês fazem entrega?</p>
-              <small class="text-muted">10:26</small>
-            </div>
-          </div>
-
-          <div class="message sent">
-            <div class="message-bubble">
-              <p class="mb-1">Olá João! Claro, temos vários produtos disponíveis.</p>
-              <small class="text-muted">10:28 <i class="bi bi-check-all text-primary"></i></small>
-            </div>
-          </div>
-
-          <div class="message sent">
-            <div class="message-bubble">
-              <p class="mb-1">Sim, fazemos entrega em toda a cidade! 🚚</p>
-              <small class="text-muted">10:28 <i class="bi bi-check-all text-primary"></i></small>
-            </div>
-          </div>
-
-          <div class="message received">
-            <img src="https://ui-avatars.com/api/?name=João+Silva&background=25D366&color=fff" class="rounded-circle me-2" width="35" height="35">
-            <div class="message-bubble">
-              <p class="mb-1">Perfeito! Qual o prazo de entrega?</p>
-              <small class="text-muted">10:30</small>
-            </div>
-          </div>
-
-          <div class="message sent">
-            <div class="message-bubble">
-              <p class="mb-1">O prazo é de 2 a 3 dias úteis para a sua região 📦</p>
-              <small class="text-muted">10:31 <i class="bi bi-check-all text-primary"></i></small>
-            </div>
-          </div>
-
-          <div class="message received">
-            <img src="https://ui-avatars.com/api/?name=João+Silva&background=25D366&color=fff" class="rounded-circle me-2" width="35" height="35">
-            <div class="message-bubble">
-              <p class="mb-1">Ótimo! Vou fazer o pedido então 😊</p>
-              <small class="text-muted">10:32</small>
-            </div>
-          </div>
-        </div>
-
+        <div class="chat-header border-bottom p-3 bg-white"></div>
+        <div class="chat-messages flex-grow-1 p-4"></div>
         <div class="chat-input border-top p-3 bg-white">
           <div class="d-flex align-items-center gap-2">
-            <button class="btn btn-light" title="Anexar arquivo">
-              <i class="bi bi-paperclip"></i>
-            </button>
-            <button class="btn btn-light" title="Emojis">
-              <i class="bi bi-emoji-smile"></i>
-            </button>
+            <button class="btn btn-light" title="Anexar arquivo"><i class="bi bi-paperclip"></i></button>
+            <button class="btn btn-light" title="Emojis"><i class="bi bi-emoji-smile"></i></button>
             <input type="text" class="form-control" placeholder="Digite sua mensagem..." id="messageInput">
-            <button class="btn btn-primary px-4" id="sendButton">
-              <i class="bi bi-send-fill me-1"></i> Enviar
-            </button>
+            <button class="btn btn-primary px-4" id="sendButton"><i class="bi bi-send-fill me-1"></i> Enviar</button>
           </div>
         </div>
       </div>

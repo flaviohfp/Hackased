@@ -40,7 +40,7 @@ form.onsubmit = function(e) {
     sessionStorage.setItem('usuario', 'atendente');
     mostrarAlerta('Login realizado!', 'sucesso');
     setTimeout(function() {
-      window.location.href = 'historico.html';
+      window.location.href = 'index.html';
     }, 1000);
   } else if (email === 'usuario@gestor.com' && senha === '123') {
     sessionStorage.setItem('usuario', 'gestor');

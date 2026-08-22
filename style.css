@@ -122,7 +122,7 @@ body {
 }
 
 /* ============================
-   ÁREA DO CHAT
+   REA DO CHAT
 ============================ */
 .chat-area {
   background-color: #f0f2f5;
@@ -228,7 +228,7 @@ body {
 }
 
 /* ============================
-   HISTÓRICO E CARDS
+   HISTRICO E CARDS
 ============================ */
 .message-card {
   background: #fff;
@@ -286,4 +286,105 @@ body {
   .sidebar-platforms { width: 60px; }
   .chat-area { margin-left: 60px; }
   .message-bubble { max-width: 85%; font-size: 0.9rem; }
+}
+
+.main-content {
+  background: #f5f7fb;
+  min-width: 0;
+  overflow-y: auto;
+}
+
+.messages-container {
+  min-height: calc(100vh - 230px);
+}
+
+.stat-icon {
+  align-items: center;
+  display: inline-flex;
+  height: 42px;
+  justify-content: center;
+  width: 42px;
+}
+
+.platform-badge {
+  align-items: center;
+  border-radius: 999px;
+  display: inline-flex;
+  font-size: 0.8rem;
+  font-weight: 600;
+  gap: 0.35rem;
+  padding: 0.35rem 0.7rem;
+}
+
+.platform-badge.whatsapp {
+  background: rgba(37, 211, 102, 0.12);
+  color: #128c4a;
+}
+
+.platform-badge.instagram {
+  background: rgba(228, 64, 95, 0.12);
+  color: #b82949;
+}
+
+.platform-badge.facebook {
+  background: rgba(24, 119, 242, 0.12);
+  color: #155fc3;
+}
+
+.status-resolved {
+  background: #d1e7dd;
+  color: #0f5132;
+}
+
+.status-pending {
+  background: #fff3cd;
+  color: #664d03;
+}
+
+.customer-name {
+  color: #212529;
+  font-size: 1rem;
+}
+
+.message-content {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.message-text p {
+  color: #495057;
+  margin: 0.25rem 0 0;
+}
+
+.message-footer {
+  align-items: center;
+  border-top: 1px solid #eef1f4;
+  color: #6c757d;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding-top: 0.9rem;
+}
+
+.footer-item {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.35rem;
+}
+
+.no-messages {
+  align-items: center;
+  color: #6c757d;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  justify-content: center;
+  min-height: 260px;
+  text-align: center;
+}
+
+.no-messages i {
+  font-size: 2.5rem;
 }
